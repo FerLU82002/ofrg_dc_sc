@@ -13,32 +13,49 @@ interface post {
     body: Object;
     description: string;
     image: {
-        fields: {
-            title: String;
-            file: {
-                url: string;
-            };         
-          }           
-        }
-    }
+      fields: {
+        title: String;
+        file: {
+          url: string;
+        };
+      };
+    };
   };
-
-
+}
 
 export default async function Home() {
+const response = await client.getEntries({
+content_type: "blog",
+});
 
-  const response = await client.getEntries({
-    content_type: "blog",
-  })
 
-const posts = response.items ?? [];
-
-console.log(posts[0].fields.image);
+const posts: post[] = response.items ?? [];
+console.log(posts);
 
   return (
-    <section className="flex justify-center items-center gap-x-4">
-      {/* Utiliza el componente Link para la navegación interna */}
-       posts.map
-    </section>
-  );
+     <section className="flex justify-center items-center gap-x-4"> 
+       {
+         <div>
+           <ThemeSwitcher />
+         </div>
+         /* Aquí se coloca el botón de cambio de tema */
+       }
+       {posts.map((post) => (
+         <article key={post.sys.id} className="flex flex-col gap-y-2">
+           <h2 className="text-2xl font-bold">
+             <Link href={`/blog/${post.fields.slug}`}>
+                 {post.fields.title}
+             </Link>
+           </h2>
+           <p className="text-gray-500">{post.fields.description}</p>
+           <a href={`/blog/${post.fields.slug}`} className="text-blue-500 underline">
+             Leer más
+           </a>
+           {/* Mostrar el PDF si existe */}
+      
+       
+         </article>
+       ))}
+     </section>
+   );
 }
