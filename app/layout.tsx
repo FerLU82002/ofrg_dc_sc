@@ -21,13 +21,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider attribute="class"
-            defaultTheme="system"
+            defaultTheme="ligth"
             enableSystem
             disableTransitionOnChange>
           <Navbar/>
-          <Link className="underline text-slate-600" href="/entradas">Entradas</Link>
-          <Link className="underline text-slate-600" href="/entradas">Categorias</Link>
-        {children}
+
+          {/* <Link className="underline text-slate-600" href="/entradas">Entradas</Link>
+          <Link className="underline text-slate-600" href="/entradas">Categorias</Link> */}
+         <main>{children}</main>
         </ThemeProvider>
         </body>
     </html>
