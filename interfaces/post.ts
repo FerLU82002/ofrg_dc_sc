@@ -8,6 +8,7 @@ interface Post {
       slug: string;
       body: Object;
       description: string;
+      tags: string[];
       image: {
         fields: {
           title: string;
