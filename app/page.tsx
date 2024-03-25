@@ -15,7 +15,7 @@ content_type: "blog",
 
 
 const posts: Post[] = response.items ?? [];
-console.log(posts[0].fields.tags);
+// console.log(posts[0].fields.tags);
 
 return <section className="lg:px-16 px-2">
     <HeroCarousel posts={posts}/>
