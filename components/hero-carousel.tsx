@@ -33,9 +33,9 @@ export default function HeroCarousel({posts}: Props){
               key={post.fields.title}
             >
               <Link href={`/entradas/${post.fields.slug}`}>
-                <Card className="relative w-full h-[36rem] rounded-lg dark:border-slate-800">
+                <Card className="relative w-full h-[36rem] dark:border-slate-800" >
                   <div
-                    className={`absolute w-full h-full bg-cover bg-center filter brightness-50`}
+                    className={`absolute w-full h-full bg-center filter brightness-50 rounded-lg`}
                     style={{
                       backgroundImage: `url(${post.fields.image.fields.file.url})`,
                     }}
@@ -77,5 +77,11 @@ export default function HeroCarousel({posts}: Props){
           ))}
         </CarouselContent>
         </Carousel>
+
+                 <div className="flex justify-center items-center h-screen">
+                  <div className="bg-blue-500 h-32 w-64 rounded-lg">
+                      Hola xde
+                 </div>
+                </div>
     </section>
 }
