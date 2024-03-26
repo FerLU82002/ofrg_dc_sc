@@ -32,7 +32,7 @@ return <section className="lg:px-16 px-2">
   //         <Link href={`https:${post.fields.image.fields.file.url}`} passHref>
   //             <button>Ver imagen</button>
   //         </Link>
-
+  // probando los cambios con git pull
   //          <h2 className="text-2x1 font-bold ">
   //            <Link href={`/blog/${post.fields.slug}`}>{post.fields.title}</Link>
   //          </h2>
